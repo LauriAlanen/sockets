@@ -14,9 +14,19 @@ client.connect(ADDR)
 def send(msg):
     message = msg.encode(FORMAT)
     msg_lenght = len(message)
+
     send_lenght = str(msg_lenght).encode(FORMAT)
     send_lenght += b" " * (HEADER - len(send_lenght))
+
     client.send(send_lenght)
     client.send(message)
-send("Tietokone")
+
+    msg_lenght = client.recv(HEADER).decode(FORMAT)
+    msg_lenght = int(msg_lenght)
+    msg = client.recv(msg_lenght).decode(FORMAT)
+    print(msg)
+
+input()
+send("Hei vaan client1!")
+input()
 send(DISCONNECT_MSG)
