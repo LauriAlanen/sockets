@@ -1,4 +1,4 @@
-from os import X_OK
+
 import socket
 
 HEADER = 8
