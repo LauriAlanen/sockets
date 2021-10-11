@@ -17,7 +17,7 @@ sys.stdout.write(colors.RED)
 
 HEADER = 8
 PORT = 5050
-SERVER = "192.168.190.189"
+SERVER = ""
 ADDR = (SERVER, PORT)
 FORMAT = "utf-8"
 DISCONNECT_MSG = "!Disconnect"
